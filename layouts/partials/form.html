@@ -1,0 +1,19 @@
+<form action="{{ .action }}" method="{{ .method }}" enctype="{{ .enctype }}">
+
+    <div class="fields">
+
+        <!-- Fields -->
+        {{ range sort .fields ".order" }}
+            {{ partial (cond .key "_field" .kind) . }}
+        {{ end }}
+        <!-- Fields -->
+
+    </div>
+
+    <!-- Submit -->
+    <ul class="actions">
+        <li>{{ partial .submit.kind .submit }}</li>
+    </ul>
+    <!-- Submit -->
+
+</form>

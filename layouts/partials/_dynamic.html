@@ -1,0 +1,1 @@
+{{ (resources.FromString (math.Rand | mul 999999) .template | resources.ExecuteAsTemplate "" .context).Content | safeHTML }}

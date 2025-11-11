@@ -1,0 +1,11 @@
+<select {{ partial "_attributes" . | safeHTMLAttr }}>
+    {{ with hugo.Store.Get .value.store }}
+        {{ range . }}
+            {{ if ne .status "inactive" }}
+                {{ with (merge . $.value) }}
+                    <option {{ partial "_attributes" . | safeHTMLAttr }}>{{ partial "_value" . }}</option>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</select>

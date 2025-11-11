@@ -1,0 +1,3 @@
+{{ range $key, $value := .attributes }}
+    {{ partial "_dynamic" (dict "template" (printf "%v='%v'" $key $value) "context" $) }}
+{{ end }}

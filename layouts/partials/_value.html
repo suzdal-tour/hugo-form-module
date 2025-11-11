@@ -1,0 +1,3 @@
+{{ with .value }}
+    {{- default (partial "_dynamic" (dict "template" . "context" $)) (i18n .) -}}
+{{ end }}
